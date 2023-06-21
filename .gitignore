@@ -10,6 +10,7 @@ __pycache__/
 # Secret folder & files
 img_ignore/
 data_ignore.py
+.idea/
 
 # Distribution / packaging
 .Python
