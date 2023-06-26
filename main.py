@@ -37,15 +37,15 @@ async def handle_start(message: types.Message):
         await message.bot.send_photo(message.chat.id, photo, caption=data.WELCOME_MESSAGE, parse_mode=types.ParseMode.MARKDOWN, reply_markup=keyboard)
 
     # Ожидание 1 минуты
-    # await asyncio.sleep(60)  # Перед запуском раскомментировать!
-    await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
+    await asyncio.sleep(60)  # Перед запуском раскомментировать!
+    # await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
 
     # Отправка второго сообщения
     await message.answer(data.AUTO_MESSAGE_1 + data.AUTO_MESSAGE_1_1, disable_web_page_preview=False, parse_mode=types.ParseMode.MARKDOWN)
 
     # Ожидание 60 минут
-    # await asyncio.sleep(60 * 60)  # Перед запуском раскомментировать!
-    await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
+    await asyncio.sleep(60 * 60)  # Перед запуском раскомментировать!
+    # await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
 
     # Создание и отправка кнопок с вопросами
     keyboard = types.InlineKeyboardMarkup()
@@ -58,8 +58,8 @@ async def handle_start(message: types.Message):
     await message.answer(data.AUTO_MESSAGE_2 + data.AUTO_MESSAGE_2_2, reply_markup=keyboard, parse_mode="Markdown")
 
     # Ожидание +6 часов
-    # await asyncio.sleep(6 * 60 * 60)  # Перед запуском раскомментировать!
-    await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
+    await asyncio.sleep(6 * 60 * 60)  # Перед запуском раскомментировать!
+    # await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
 
     # Создание и отправка кнопки со ссылкой на сайт
     keyboard = types.InlineKeyboardMarkup()
@@ -70,8 +70,8 @@ async def handle_start(message: types.Message):
         await message.bot.send_photo(message.chat.id, photo, caption=data.AUTO_MESSAGE_3, parse_mode=types.ParseMode.MARKDOWN, reply_markup=keyboard)
 
     # Ожидание +6 часов
-    # await asyncio.sleep(6 * 60 * 60)  # Перед запуском раскомментировать!
-    await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
+    await asyncio.sleep(6 * 60 * 60)  # Перед запуском раскомментировать!
+    # await asyncio.sleep(30)  # Для теста, 30 секунд. Перед запуском закомментировать!
 
     # Создание и отправка кнопок для выбора дальнейших действий
     keyboard = types.InlineKeyboardMarkup()
