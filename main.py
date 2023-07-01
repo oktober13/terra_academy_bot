@@ -1,6 +1,8 @@
 import sqlite3
 import data
 import asyncio
+import datetime
+
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
@@ -44,9 +46,10 @@ async def handle_start(message: types.Message):
     # Получение информации о пользователе
     username = '@' + message.from_user.username
     user_id = message.from_user.id
+    current_datetime = datetime.datetime.now()
 
     # Сохранение информации о пользователе в базе данных SQLite
-    cursor.execute("INSERT INTO users (username, user_id) VALUES (?, ?)", (username, user_id))
+    cursor.execute("INSERT INTO users (username, user_id, registration_date) VALUES (?, ?)", (username, user_id, current_datetime))
     conn.commit()
 
     # Создание и отправка кнопки со ссылкой на гайд
